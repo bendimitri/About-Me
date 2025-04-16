@@ -1,20 +1,64 @@
 <!DOCTYPE html>
-<html class="no-js ss-preload" lang="pt-br">
+<html lang="pt-br" class="no-js ss-preload">
 <head>
     <meta charset="utf-8">
     <title>dimi</title>
     <meta name="description" content="">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Folhas de Estilo -->
     <link rel="stylesheet" href="css/vendor.css">
     <link rel="stylesheet" href="css/styles.css">
+    
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon.ico">
     <link rel="manifest" href="site.webmanifest">
+
+    <!-- Estilos Adicionais para os Vídeos -->
+    <style>
+        .videos-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        .video-item {
+            width: 300px;
+            height: 300px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .video-item video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Exemplo de sobreposição (caso queira aplicar um emblema ou outra imagem sobre o vídeo) 
+        .video-item::before {
+            content: "";
+            position: absolute;
+            top: 0; 
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            background: url('images/seu-emblema.png') center center no-repeat;
+            background-size: contain;
+        }
+        */
+    </style>
 </head>
 <body id="top">
-
     <div id="preloader">
         <div id="loader"></div>
     </div>
@@ -40,10 +84,9 @@
                         <li class="current"><a href="#intro" class="smoothscroll">Intro</a></li>
                         <li><a href="#about" class="smoothscroll">Objetivo</a></li>
                         <li><a href="#about1" class="smoothscroll">Especializações</a></li>
-                        <li><a href="#portfolio" class="smoothscroll">Portifólho</a></li>
+                        <li><a href="#portfolio" class="smoothscroll">Portfolio</a></li>
                         <li><a href="#about2" class="smoothscroll">Empresa</a></li>
                     </ul>
-                    
                 </nav>
             </div>
         </header>
@@ -67,7 +110,6 @@
                         <li><a href="https://www.instagram.com/bendimitri_/">Instagram</a></li>
                     </ul>
                 </div>
-                <!-- Links para scroll suave -->
                 <a href="#about" class="intro-scrolldown smoothscroll">
                     <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                         <path d="M11 21.883l-6.235-7.527-.765.644 7.521 9 7.479-9-.764-.645-6.236 7.529v-21.884h-1v21.883z"/>
@@ -95,8 +137,6 @@
                     <div class="column lg-6 md-12">
                         <div class="about-info__text">
                             <h2 class="text-pretitle with-line" data-animate-el>Objetivo</h2>
-
-
                             <p class="timeline__timeframe" data-animate-el>-Dimitri Brilhante Robert - CO</p>
                             <p class="attention-getter" data-animate-el>
                                 Programador especializado no desenvolvimento de soluções tecnológicas para empresas que buscam eficiência e inovação. Meu objetivo é criar sistemas personalizados, seguros e escaláveis, que se adaptem às necessidades específicas de cada cliente. Acredito que a tecnologia deve simplificar processos, melhorar a produtividade e impulsionar o crescimento dos negócios.
@@ -105,7 +145,6 @@
                     </div>
                 </div>
 
-                <!-- Caso queira manter a timeline na seção "Objetivo" ou movê-la para outra seção -->
                 <div id="about1" class="row about-timelines" data-animate-block>
                     <div class="column lg-6 tab-12">
                         <h2 class="text-pretitle" data-animate-el>Experience</h2>
@@ -165,35 +204,37 @@
                 </div> 
             </section>
 
-<!-- Seção Portfólio -->
-<section id="portfolio" class="s-company target-section s-contact" style="display: flex; flex-direction: column; align-items: center; padding: var(--vspace-3) 0;">
-    <div class="row" style="width: 100%; justify-content: center; display: flex; margin-bottom: var(--vspace-2);">
-        <div class="column lg-12" style="text-align: center;">
-            <p class="h1">Portfólio</p>
-        </div>
-    </div>
+            <!-- Seção Portfólio -->
+            <section id="portfolio" class="s-company target-section s-contact" style="display: flex; flex-direction: column; align-items: center; padding: var(--vspace-3) 0;">
+                <div class="row" style="width: 100%; justify-content: center; display: flex; margin-bottom: var(--vspace-2);">
+                    <div class="column lg-12" style="text-align: center;">
+                        <p class="h1">Portfólio</p>
+                    </div>
+                </div>
 
-    <!-- Área de Vídeos Centralizada -->
-    <div id="videos-portifolio" style="display: flex; justify-content: center; align-items: center; gap: 2rem; flex-wrap: wrap;">
-        <!-- Vídeo 1 -->
-        <div class="video-item" style="flex: 0 1 300px; display: flex; justify-content: center; align-items: center;">
-            <video src="videos/Portifolio1.mp4" controls poster="images/video1-poster.jpg" style="width: 100%; max-width: 300px;">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-        </div>
-        <!-- Vídeo 2 -->
-        <div class="video-item" style="flex: 0 1 300px; display: flex; justify-content: center; align-items: center;">
-            <video src="videos/Portifolio2.mp4" controls poster="images/video1-poster.jpg" style="width: 100%; max-width: 300px;">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-        </div>
-    </div>
-</section>
-
-
+                <!-- Área de Vídeos Centralizada -->
+                <div class="videos-container">
+                    <!-- Vídeo 1 -->
+                    <div class="video-item">
+                        <video src="videos/Portifolio1.mp4" 
+                               poster="images/video1-poster.jpg" 
+                               muted autoplay loop playsinline>
+                            Seu navegador não suporta o elemento de vídeo.
+                        </video>
+                    </div>
+                    <!-- Vídeo 2 -->
+                    <div class="video-item">
+                        <video src="videos/Portifolio2.mp4" 
+                               poster="images/video2-poster.jpg" 
+                               muted autoplay loop playsinline>
+                            Seu navegador não suporta o elemento de vídeo.
+                        </video>
+                    </div>
+                </div>
+            </section>
 
             <!-- Seção Contato -->
-            <section id="about2" class="s-company target-section" id="contact" class="s-contact target-section">
+            <section id="about2" class="s-company target-section s-contact" id="contact">
                 <div class="row contact-top">
                     <div class="column lg-12">
                         <h2 class="text-pretitle">Seu Problema, Nossa Solução</h2>
@@ -221,7 +262,6 @@
                     </div>
                 </div>
             </section>
-
         </main>
 
         <footer class="s-footer">
@@ -240,6 +280,7 @@
             </div>
         </footer>
     </div>
+    
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 </body>
